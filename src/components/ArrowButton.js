@@ -27,7 +27,6 @@ export default ({ size = 16, styles = {}, direction = "right" }) => {
       .imd-arrow-button__icon{
         width: ${size}px;
         height: ${size}px;
-        cursor: pointer;
       }
 
       .right{
@@ -48,7 +47,7 @@ export default ({ size = 16, styles = {}, direction = "right" }) => {
     </style>
     <button class="imd-arrow-button" style="${styleMap(styles)}">
       <object 
-        class="imd-arrow-button__icon ${direction}" 
+        class="imd-arrow-button__icon ${direction}"
         data="./assets/icons/straight-right-arrow.svg" 
         type="image/svg+xml">
       </object>

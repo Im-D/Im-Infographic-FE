@@ -1,23 +1,26 @@
 import { html } from 'https://unpkg.com/lit-html?module';
 
-import IMDInfo from './IMDInfo.js'
-import Button from './Button.js'
-import ArrowButton from './ArrowButton.js'
+import IMDInfoCard from '/src/components/IMDInfoCard.js'
+import Button from '/src/components/Button.js'
+import ArrowButton from '/src/components/ArrowButton.js'
 
 const Main = () => {
   return html`
     <style>
-      .main{
+      .main {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
 
         width: 100%;
+        max-width: 600px;
         height: 100%;
+
+        margin: 0 auto;
       }
 
-      .main__repo-buttons{
+      .main__repo-container {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -28,16 +31,27 @@ const Main = () => {
 
         margin-top: 32px;
       }
+
+      .main__repo-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        margin: 0 12px;
+      }
     </style>
 
     <main class="main">
-      ${IMDInfo()}
-      <section class="main__repo-buttons">
-        ${ArrowButton({direction: 'left'})}
-        ${Button({text: 'repo name', callback: () => {console.log('click')}})}
-        ${Button({text: 'repo name'})}
-        ${Button({text: 'repo name'})}
-        ${Button({text: 'repo name'})}
+      ${IMDInfoCard()}
+      <section class="main__repo-container">
+        ${ArrowButton({ direction: 'left' })}
+        <section class="main__repo-list">
+          ${Button({ text: 'repo name', styles: { marginRight: '10px' } })}
+          ${Button({ text: 'repo name', styles: { marginRight: '10px' } })}
+          ${Button({ text: 'repo name', styles: { marginRight: '10px' } })}
+          ${Button({ text: 'repo name' })}
+        </section>
         ${ArrowButton({})}
       </section>
     </main>

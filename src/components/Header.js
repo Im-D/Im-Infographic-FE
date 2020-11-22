@@ -1,7 +1,7 @@
 import { html } from 'https://unpkg.com/lit-html?module';
 
-import HeaderItem from './HeaderItem.js'
-import Logo from './Logo.js'
+import HeaderItem from '/src/components/HeaderItem.js'
+import Logo from '/src/components/Logo.js'
 
 const Header = () => {
   const itemStyles = {

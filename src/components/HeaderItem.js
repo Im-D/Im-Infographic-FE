@@ -15,6 +15,7 @@ export default ({ name, size = 24, styles = {}, data = '' }) => html`
       .header-item__icon { 
         width: ${size}px;
         height: ${size}px;
+        cursor: pointer;
       }
       .header-item__text{
         font-size: 14px;
