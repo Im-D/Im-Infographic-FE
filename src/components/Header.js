@@ -1,5 +1,7 @@
 import { html } from 'https://unpkg.com/lit-html?module';
+
 import HeaderItem from './HeaderItem.js'
+import Logo from './Logo.js'
 
 const Header = () => {
   const itemStyles = {
@@ -66,10 +68,9 @@ const Header = () => {
           ${HeaderItem({ name: 'star', data: '86' })}
         </section>
         <section class="header__middle-side">
-          <h1>IMG Logo</h1>
+          ${Logo()}
         </section>
         <section class="header__right-side">
-          ${HeaderItem({ name: 'file', data: '4', styles: itemStyles })}
           ${HeaderItem({ name: 'notepad', data: '160', styles: itemStyles })}
           ${HeaderItem({ name: 'link', data: '400' })}
         </section>

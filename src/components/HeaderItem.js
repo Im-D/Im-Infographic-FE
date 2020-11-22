@@ -9,6 +9,8 @@ export default ({ name, size = 24, styles = {}, data = '' }) => html`
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        
+        cursor: pointer;
       }
       .header-item__icon { 
         width: ${size}px;
