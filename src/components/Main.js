@@ -4,6 +4,7 @@ import IMDInfoCard from '/src/components/IMDInfoCard.js'
 import Button from '/src/components/Button.js'
 import ArrowButton from '/src/components/ArrowButton.js'
 import RepoCard from '/src/components/RepoCard.js'
+import Switch from '/src/components/Switch.js'
 
 const repoBtnClick = (repoInfo) => {
   state.currentRepo = { ...repoInfo }
@@ -37,6 +38,7 @@ const state = {
       "url": "https://github.com/im-d-team/Algorithm"
     }
   ],
+  buttonList: ['User 정렬', 'Date 정렬'],
   currentRepo: {
     "name": "Dev-Docs",
     "description": "내가 일주일간 공부하거나 알게된 내용을 공유하는 공간 📱",
@@ -91,6 +93,10 @@ const Main = () => {
 
         margin: 0 12px;
       }
+
+      .main__pr-container{
+        margin-top: 60px;
+      }
     </style>
 
     <main class="main">
@@ -116,6 +122,10 @@ const Main = () => {
           url: state.currentRepo.url,
           description: state.currentRepo.description
         })}
+      </section>
+
+      <section class="main__pr-container">
+        ${Switch({buttonList: state.buttonList})}
       </section>
     </main>
   `

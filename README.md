@@ -31,10 +31,11 @@
 ## Component
 
 - [x] Logo
-- [ ] Repo Button
-- [ ] Arrow Button
+- [x] Repo Button
+- [x] Arrow Button
+- [X] Switch
 - [x] Header Item
-- [ ] IMD Info Card
-- [ ] Repo Info Card
+- [x] IMD Info Card
+- [x] Repo Info Card
 - [ ] PR Info Card
 - [ ] User Info Card
