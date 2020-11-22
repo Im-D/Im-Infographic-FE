@@ -7,7 +7,7 @@
 ## Feature
 ### Header
 
-- [ ] Logo
+- [x] Logo
 - [ ] Total Star count
 - [ ] Total User count
 - [ ] Total Repo count
@@ -30,10 +30,10 @@
 
 ## Component
 
-- [ ] Logo
-- [ ] Button
+- [x] Logo
+- [ ] Repo Button
 - [ ] Arrow Button
-- [ ] Header Item
+- [x] Header Item
 - [ ] IMD Info Card
 - [ ] Repo Info Card
 - [ ] PR Info Card
