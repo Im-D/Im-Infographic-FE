@@ -116,6 +116,16 @@ const Main = () => {
 
         border-radius: 4px;
         box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+
+        background: 
+          linear-gradient(#fff 33%, rgba(249,206,192, 0)),
+          linear-gradient(rgba(249,206,192, 0), #fff 66%) 0 100%,
+          radial-gradient(farthest-side at 50% 0, rgba(34,34,34, 0.5), rgba(0,0,0,0)),
+          radial-gradient(farthest-side at 50% 100%, rgba(34,34,34, 0.5), rgba(0,0,0,0)) 0 100%;
+        background-color: #fff;
+        background-repeat: no-repeat;
+        background-attachment: local, local, scroll, scroll;
+        background-size: 100% 45px, 100% 45px, 100% 15px, 100% 15px;
       }
     </style>
 
