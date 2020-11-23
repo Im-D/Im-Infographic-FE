@@ -5,6 +5,7 @@ import Button from '/src/components/Button.js'
 import ArrowButton from '/src/components/ArrowButton.js'
 import RepoCard from '/src/components/RepoCard.js'
 import Switch from '/src/components/Switch.js'
+import ReviewerCard from '/src/components/ReviewerCard.js'
 
 const repoBtnClick = (repoInfo) => {
   state.currentRepo = { ...repoInfo }
@@ -60,7 +61,7 @@ const Main = () => {
         max-width: 600px;
         height: 100%;
 
-        margin: 0 auto;
+        margin: 0 auto 50px;
       }
 
       .main__repo-container {
@@ -95,7 +96,26 @@ const Main = () => {
       }
 
       .main__pr-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
         margin-top: 60px;
+      }
+
+      .main_pr-list{
+        width: 100%;
+        height: 600px;
+
+        margin-top: 30px;
+        padding: 12px;
+
+        overflow: auto;
+
+        border-radius: 4px;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
       }
     </style>
 
@@ -126,6 +146,15 @@ const Main = () => {
 
       <section class="main__pr-container">
         ${Switch({buttonList: state.buttonList})}
+
+        <section class="main_pr-list">
+          ${ReviewerCard()}
+          ${ReviewerCard()}
+          ${ReviewerCard()}
+          ${ReviewerCard()}
+          ${ReviewerCard()}
+          ${ReviewerCard()}
+        </section>
       </section>
     </main>
   `

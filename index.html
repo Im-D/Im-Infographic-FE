@@ -12,9 +12,14 @@
 
 <script type="module">
   import { render } from 'https://unpkg.com/lit-html?module';
-  import APP from './src/index.js';
-
-  render(APP, document.body);
+  import APP from './src/index@1.js';
+  // fetch('https://raw.githubusercontent.com/Im-D/Im-Infographic-BE/main/data/pr/20201022.json')
+  // .then(function(response) {
+  //   return response.json();
+  // }).then(function(myJson) {
+    
+  // });
+  render(APP(), document.body);
 </script>
 
 </html>
