@@ -1,5 +1,7 @@
 import { html } from 'https://unpkg.com/lit-html?module';
 
+import NameTag from './NameTag.js'
+
 export default () => {
   return html`
     <style>
@@ -51,7 +53,8 @@ export default () => {
         width: 48px;
         height: 48px;
 
-        margin-left: 8px;
+        margin-left: 12px;
+        margin-right: 12px;
 
         border-radius: 50%;
         object-fit: cover;
@@ -66,7 +69,7 @@ export default () => {
 
         width: 100%;
 
-        padding: 12px;
+        padding: 12px 12px;
         box-sizing: border-box;
       }
 
@@ -77,6 +80,8 @@ export default () => {
         align-items: center;
 
         width: 100%;
+
+        padding: 8px 0;
       }
 
       .user-card__name-card__text {
@@ -96,7 +101,7 @@ export default () => {
       <section class="user-card__header">
         <span class="user-card__number">1</span>
         <img class="user-card__user-image" src="./assets/images/img-logo.png">
-        <!-- Name Tag -->
+        ${NameTag({})}
       </section>
       <section class="user-card__main">
         <div class="user-card__name-card">
