@@ -1,8 +1,13 @@
 import { html } from 'https://unpkg.com/lit-html?module';
 
 import NameTag from './NameTag.js'
+import PRCard from './PRCard.js'
 
-export default () => {
+export default ({idx = 1, preList = []}) => {
+  const prStyles = {
+    marginBottom: '8px'
+  }
+
   return html`
     <style>
       .user-card {
@@ -69,7 +74,7 @@ export default () => {
 
         width: 100%;
 
-        padding: 12px 12px;
+        padding: 12px 12px 4px;
         box-sizing: border-box;
       }
 
@@ -85,7 +90,7 @@ export default () => {
       }
 
       .user-card__name-card__text {
-        padding: 6px 12px;
+        padding: 4px 12px;
 
         border: none;
         border-radius: 25px;
@@ -99,7 +104,7 @@ export default () => {
     </style>
     <section class="user-card">
       <section class="user-card__header">
-        <span class="user-card__number">1</span>
+        <span class="user-card__number">${idx}</span>
         <img class="user-card__user-image" src="./assets/images/img-logo.png">
         ${NameTag({})}
       </section>
@@ -107,8 +112,8 @@ export default () => {
         <div class="user-card__name-card">
           <span class="user-card__name-card__text">미완료 PR</span>
         </div>
-
-        <!-- PR Card -->
+          ${PRCard({styles: prStyles})}
+          ${PRCard({})}
       </section>
     </section>
   `;

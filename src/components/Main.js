@@ -115,7 +115,7 @@ const Main = () => {
         overflow: auto;
 
         border-radius: 4px;
-        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+        /* box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2); */
 
         background: 
           linear-gradient(#fff 33%, rgba(249,206,192, 0)),
@@ -158,12 +158,12 @@ const Main = () => {
         ${Switch({buttonList: state.buttonList})}
 
         <section class="main_pr-list">
-          ${ReviewerCard()}
-          ${ReviewerCard()}
-          ${ReviewerCard()}
-          ${ReviewerCard()}
-          ${ReviewerCard()}
-          ${ReviewerCard()}
+          ${ReviewerCard({})}
+          ${ReviewerCard({})}
+          ${ReviewerCard({})}
+          ${ReviewerCard({})}
+          ${ReviewerCard({})}
+          ${ReviewerCard({})}
         </section>
       </section>
     </main>
