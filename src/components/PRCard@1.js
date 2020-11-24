@@ -1,7 +1,7 @@
 import { html } from 'https://unpkg.com/lit-html?module';
 import { styleMap } from 'https://unpkg.com/lit-html/directives/style-map.js?module';
 
-import PRLabel from './PRLabel.js'
+import PRLabel from 'https://raw.githubusercontent.com/Im-D/Im-Infographic-FE/main/PRLabel@1.js'
 
 export default ({ name = 'pull request name', styles = {}, labelName = 'needs review', labelColor = '#dcf968', date = '2020-11-24', author = 'SeonHyungJo' }) => {
   return html`

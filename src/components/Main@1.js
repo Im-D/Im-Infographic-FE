@@ -1,11 +1,11 @@
 import { html, render } from 'https://unpkg.com/lit-html?module';
 
-import IMDInfoCard from '/src/components/IMDInfoCard.js'
-import Button from '/src/components/Button.js'
-import ArrowButton from '/src/components/ArrowButton.js'
-import RepoCard from '/src/components/RepoCard.js'
-import Switch from '/src/components/Switch.js'
-import ReviewerCard from '/src/components/ReviewerCard.js'
+import IMDInfoCard from 'https://raw.githubusercontent.com/Im-D/Im-Infographic-FE/main/src/components/IMDInfoCard@1.js'
+import Button from 'https://raw.githubusercontent.com/Im-D/Im-Infographic-FE/main/src/components/Button@1.js'
+import ArrowButton from 'https://raw.githubusercontent.com/Im-D/Im-Infographic-FE/main/src/components/ArrowButton@1.js'
+import RepoCard from 'https://raw.githubusercontent.com/Im-D/Im-Infographic-FE/main/src/components/RepoCard@1.js'
+import Switch from 'https://raw.githubusercontent.com/Im-D/Im-Infographic-FE/main/src/components/Switch@1.js'
+import ReviewerCard from 'https://raw.githubusercontent.com/Im-D/Im-Infographic-FE/main/src/components/ReviewerCard@1.js'
 
 const repoBtnClick = (repoInfo) => {
   state.currentRepo = { ...repoInfo }
@@ -115,6 +115,7 @@ const Main = () => {
         overflow: auto;
 
         border-radius: 4px;
+        box-sizing: border-box;
         /* box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2); */
 
         background: 
