@@ -35,6 +35,7 @@ export default ({ name = 'pull request name', href = '', styles = {}, labelName 
       }
 
       .pr-card__title{
+        color: #000;
         font-size: 16px;
         font-weight: bold;
       }
