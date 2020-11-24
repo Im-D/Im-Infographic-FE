@@ -1,9 +1,9 @@
 import { html } from 'https://unpkg.com/lit-html?module';
 import { styleMap } from 'https://unpkg.com/lit-html/directives/style-map.js?module';
 
-import PRLabel from 'https://raw.githubusercontent.com/Im-D/Im-Infographic-FE/main/PRLabel@1.js'
+import PRLabel from '/src/components/PRLabel@1.js'
 
-export default ({ name = 'pull request name', styles = {}, labelName = 'needs review', labelColor = '#dcf968', date = '2020-11-24', author = 'SeonHyungJo' }) => {
+export default ({ name = 'pull request name', href = '', styles = {}, labelName = 'needs review', labelColor = '#dcf968', date = '2020-11-24', author = 'SeonHyungJo' }) => {
   return html`
     <style>
       .pr-card {
@@ -47,7 +47,7 @@ export default ({ name = 'pull request name', styles = {}, labelName = 'needs re
         color: rgb(88, 96, 105);
       }
     </style>
-    <section class="pr-card" style="${styleMap(styles)}">
+    <a class="pr-card" href="${href}" style="${styleMap(styles)}">
       <object 
         class="pr-card__icon" 
         data="/assets/icons/github/pull-request.svg" 
@@ -56,12 +56,12 @@ export default ({ name = 'pull request name', styles = {}, labelName = 'needs re
       <section class="pr-card__contents">
         <section class="pr-card__header">
           <span class="pr-card__title">${name}</span>
-          ${PRLabel({name: labelName, color: labelColor})}
+          ${PRLabel({ name: labelName, color: labelColor })}
         </section>
         <section class="pr-card__main">
           <span class="pr-card__main__comment">opened ${date} by ${author}</span>
         </section>
       </section>
-    </section>
+    </a>
   `;
 }

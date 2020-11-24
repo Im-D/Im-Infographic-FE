@@ -1,11 +1,35 @@
 import { html, render } from 'https://unpkg.com/lit-html?module';
 
-import IMDInfoCard from 'https://raw.githubusercontent.com/Im-D/Im-Infographic-FE/main/src/components/IMDInfoCard@1.js'
-import Button from 'https://raw.githubusercontent.com/Im-D/Im-Infographic-FE/main/src/components/Button@1.js'
-import ArrowButton from 'https://raw.githubusercontent.com/Im-D/Im-Infographic-FE/main/src/components/ArrowButton@1.js'
-import RepoCard from 'https://raw.githubusercontent.com/Im-D/Im-Infographic-FE/main/src/components/RepoCard@1.js'
-import Switch from 'https://raw.githubusercontent.com/Im-D/Im-Infographic-FE/main/src/components/Switch@1.js'
-import ReviewerCard from 'https://raw.githubusercontent.com/Im-D/Im-Infographic-FE/main/src/components/ReviewerCard@1.js'
+import IMDInfoCard from '/src/components/IMDInfoCard@1.js'
+import Button from '/src/components/Button@1.js'
+import ArrowButton from '/src/components/ArrowButton@1.js'
+import RepoCard from '/src/components/RepoCard@1.js'
+import Switch from '/src/components/Switch@1.js'
+
+import ReviewerCard from '/src/components/ReviewerCard@1.js'
+import DateCard from '/src/components/DateCard@1.js'
+
+const ReviewerCardList = () => {
+  return html`
+    ${ReviewerCard({})}
+    ${ReviewerCard({})}
+    ${ReviewerCard({})}
+    ${ReviewerCard({})}
+    ${ReviewerCard({})}
+    ${ReviewerCard({})}
+  `
+}
+
+const DateCardList = () => {
+  return html`
+    ${DateCard({})}
+    ${DateCard({})}
+    ${DateCard({})}
+    ${DateCard({})}
+    ${DateCard({})}
+    ${DateCard({})}
+  `
+}
 
 const repoBtnClick = (repoInfo) => {
   state.currentRepo = { ...repoInfo }
@@ -49,6 +73,12 @@ const state = {
 }
 
 const Main = () => {
+  const switchList = [ReviewerCardList, DateCardList]
+  const changeCard = (idx) => { 
+    const target = document.querySelector(".main_pr-list")
+    render(switchList[idx](), target)
+  }
+
   return html`
     <style>
       .main {
@@ -113,6 +143,7 @@ const Main = () => {
         padding: 12px;
 
         overflow: auto;
+        -ms-overflow-style: none;
 
         border-radius: 4px;
         box-sizing: border-box;
@@ -156,15 +187,10 @@ const Main = () => {
       </section>
 
       <section class="main__pr-container">
-        ${Switch({buttonList: state.buttonList})}
+        ${Switch({buttonList: state.buttonList, callback: changeCard})}
 
         <section class="main_pr-list">
-          ${ReviewerCard({})}
-          ${ReviewerCard({})}
-          ${ReviewerCard({})}
-          ${ReviewerCard({})}
-          ${ReviewerCard({})}
-          ${ReviewerCard({})}
+          ${ReviewerCardList()}
         </section>
       </section>
     </main>

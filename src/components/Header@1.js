@@ -1,7 +1,7 @@
 import { html } from 'https://unpkg.com/lit-html?module';
 
-import HeaderItem from 'https://raw.githubusercontent.com/Im-D/Im-Infographic-FE/main/src/components/HeaderItem@1.js'
-import Logo from 'https://raw.githubusercontent.com/Im-D/Im-Infographic-FE/main/src/components/Logo@1.js'
+import HeaderItem from '/src/components/HeaderItem@1.js'
+import Logo from '/src/components/Logo@1.js'
 
 const Header = () => {
   const itemStyles = {

@@ -1,7 +1,7 @@
 import { html } from 'https://unpkg.com/lit-html?module';
 
-import NameTag from 'https://raw.githubusercontent.com/Im-D/Im-Infographic-FE/main/NameTag@1.js'
-import PRCard from 'https://raw.githubusercontent.com/Im-D/Im-Infographic-FE/main/PRCard@1.js'
+import NameTag from '/src/components/NameTag@1.js'
+import PRCard from '/src/components/PRCard@1.js'
 
 export default ({idx = 1, preList = []}) => {
   const prStyles = {
