@@ -37,5 +37,5 @@
 - [x] Header Item
 - [x] IMD Info Card
 - [x] Repo Info Card
-- [ ] PR Info Card
-- [ ] User Info Card
+- [x] PR Info Card
+- [x] User Info Card
