@@ -2,6 +2,7 @@ import { html } from 'https://unpkg.com/lit-html?module';
 import { styleMap } from 'https://unpkg.com/lit-html/directives/style-map.js?module';
 
 import PRLabel from '/src/components/PRLabel@1.js'
+import PullRequestIcon from '/assets/icons/github/pull-request.js'
 
 export default ({ name = 'pull request name', href = '', styles = {}, labelName = 'needs review', labelColor = '#dcf968', date = '2020-11-24', author = 'SeonHyungJo' }) => {
   return html`
@@ -48,11 +49,7 @@ export default ({ name = 'pull request name', href = '', styles = {}, labelName 
       }
     </style>
     <a class="pr-card" href="${href}" style="${styleMap(styles)}">
-      <object 
-        class="pr-card__icon" 
-        data="/assets/icons/github/pull-request.svg" 
-        type="image/svg+xml">
-      </object>
+      ${PullRequestIcon('pr-card__icon')}
       <section class="pr-card__contents">
         <section class="pr-card__header">
           <span class="pr-card__title">${name}</span>

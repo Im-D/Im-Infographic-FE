@@ -1,5 +1,9 @@
 import { html } from 'https://unpkg.com/lit-html?module';
 
+import ForksIcon from '/assets/icons/github/forks.js'
+import StartsIcon from '/assets/icons/github/stars.js'
+import RepoIcon from '/assets/icons/github/repo.js'
+
 export default ({ name = 'Dev-Docs', url = '', description = 'Repository Contents', stars = 0, forks = 0 }) => {
   return html`
     <style>
@@ -62,11 +66,7 @@ export default ({ name = 'Dev-Docs', url = '', description = 'Repository Content
     </style>
     <a href="${url}" target="_blank" class="repo-card">
       <section class="repo-card__header">
-        <object 
-          class="repo-card__icon" 
-          data="/assets/icons/github/repo.svg" 
-          type="image/svg+xml">
-        </object>
+        ${RepoIcon('repo-card__icon')}
         <p>${name}</p>
       </section>
       <p class="repo-card__contents">
@@ -74,20 +74,12 @@ export default ({ name = 'Dev-Docs', url = '', description = 'Repository Content
       </p>
       <section class="repo-card__footer">
         <div class="repo-card__item">
-          <object 
-            class="repo-card__icon" 
-            data="/assets/icons/github/stars.svg" 
-            type="image/svg+xml">
-          </object>
+          ${StartsIcon('repo-card__icon')}
           <span class="repo-card__footer__txt">${stars}</span>
         </div>
 
         <div class="repo-card__item">
-          <object 
-            class="repo-card__icon" 
-            data="/assets/icons/github/forks.svg" 
-            type="image/svg+xml">
-          </object>
+          ${ForksIcon('repo-card__icon')}
           <span class="repo-card__footer__txt">${forks}</span>
         </div>
       </section>
