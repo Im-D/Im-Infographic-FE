@@ -1,6 +1,8 @@
 import { html } from 'https://unpkg.com/lit-html?module';
 import { styleMap } from 'https://unpkg.com/lit-html/directives/style-map.js?module';
 
+import PRLabel from './PRLabel.js'
+
 export default ({ name = 'pull request name', styles = {}, labelName = 'needs review', labelColor = '#dcf968', date = '2020-11-24', author = 'SeonHyungJo' }) => {
   return html`
     <style>
@@ -36,14 +38,8 @@ export default ({ name = 'pull request name', styles = {}, labelName = 'needs re
         font-weight: bold;
       }
 
-      .pr-card__label{
-        color: #000;
-        padding: 0 7px;
-        font-size: 12px;
-        font-weight: 500;
-        line-height: 18px;
-        border: 1px solid transparent;
-        border-radius: 2em;
+      .pr-card__main{
+        margin-top: 4px;
       }
 
       .pr-card__main__comment{
@@ -60,7 +56,7 @@ export default ({ name = 'pull request name', styles = {}, labelName = 'needs re
       <section class="pr-card__contents">
         <section class="pr-card__header">
           <span class="pr-card__title">${name}</span>
-          <span class="pr-card__label" style="background-color: ${labelColor}">${labelName}</span>
+          ${PRLabel({name: labelName, color: labelColor})}
         </section>
         <section class="pr-card__main">
           <span class="pr-card__main__comment">opened ${date} by ${author}</span>

@@ -3,7 +3,7 @@ import { html } from 'https://unpkg.com/lit-html?module';
 export default ({buttonList = [], callback = () => {}}) => {
   const selectMenu = (idx = 0) => {
     const selecteArea = document.querySelector(".switch__selected-area")
-    selecteArea.style.cssText = `transform: translateX(${100 * idx - 50}%);`
+    selecteArea.style.cssText = `transform: translateX(${100 * idx - 50}%) translateY(-10%);`
     callback(idx)
   }
 
@@ -39,7 +39,7 @@ export default ({buttonList = [], callback = () => {}}) => {
 
       .switch__selected-area{
         position: absolute;
-        transform: translateX(-50%);
+        transform: translateX(-50%) translateY(-10%);
         transition: transform 0.5s;
 
         border-radius: 25px;

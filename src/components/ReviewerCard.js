@@ -86,7 +86,7 @@ export default ({idx = 1, preList = []}) => {
 
         width: 100%;
 
-        padding: 8px 0;
+        padding: 8px 0 20px;
       }
 
       .user-card__name-card__text {
@@ -112,6 +112,10 @@ export default ({idx = 1, preList = []}) => {
         <div class="user-card__name-card">
           <span class="user-card__name-card__text">미완료 PR</span>
         </div>
+          ${PRCard({styles: prStyles})}
+          ${PRCard({styles: prStyles})}
+          ${PRCard({styles: prStyles})}
+          ${PRCard({styles: prStyles})}
           ${PRCard({styles: prStyles})}
           ${PRCard({})}
       </section>
