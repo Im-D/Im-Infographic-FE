@@ -1,20 +1,20 @@
 @font-face{ 
   font-family:'NotoSansKR'; 
-  src:url(./assets/font/NotoSansKR-Regular.otf) format(otf) ;
+  src:url(https://im-d.github.io/Im-Infographic-FE/assets/font/NotoSansKR-Regular.otf) format(otf) ;
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face{ 
   font-family:'NotoSansKR'; 
-  src:url(./assets/font/NotoSansKR-Bold.otf) format(otf) ;
+  src:url(https://im-d.github.io/Im-Infographic-FE/assets/font/NotoSansKR-Bold.otf) format(otf) ;
   font-weight: bold;
   font-style: bold;
 }
 
 @font-face{ 
   font-family:'NotoSansKR'; 
-  src:url(./assets/font/NotoSansKR-Light.otf) format(otf) ;
+  src:url(https://im-d.github.io/Im-Infographic-FE/assets/font/NotoSansKR-Light.otf) format(otf) ;
   font-weight: 300;
   font-style: 300;
 }

@@ -26,7 +26,7 @@ export default ({ name, size = 24, styles = {}, data = '' }) => html`
     <object 
       id="${name}" 
       class="header-item__icon" 
-      data="./assets/icons/${name}.svg" 
+      data="https://im-d.github.io/Im-Infographic-FE/assets/icons/${name}.svg" 
       type="image/svg+xml">
     </object>
     <span class="header-item__text">${data}</span>

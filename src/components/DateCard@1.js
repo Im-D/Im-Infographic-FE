@@ -102,20 +102,20 @@ export default ({idx = 0, preList = []}) => {
           <span class="date-card__name-card__text">미완료 User</span>
         </div>
         <div class="date-card__user-list">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
+          <img class="date-card__user-image" src="https://im-d.github.io/Im-Infographic-FE/assets/images/img-logo.png">
+          <img class="date-card__user-image" src="https://im-d.github.io/Im-Infographic-FE/assets/images/img-logo.png">
+          <img class="date-card__user-image" src="https://im-d.github.io/Im-Infographic-FE/assets/images/img-logo.png">
+          <img class="date-card__user-image" src="https://im-d.github.io/Im-Infographic-FE/assets/images/img-logo.png">
+          <img class="date-card__user-image" src="https://im-d.github.io/Im-Infographic-FE/assets/images/img-logo.png">
+          <img class="date-card__user-image" src="https://im-d.github.io/Im-Infographic-FE/assets/images/img-logo.png">
+          <img class="date-card__user-image" src="https://im-d.github.io/Im-Infographic-FE/assets/images/img-logo.png">
+          <img class="date-card__user-image" src="https://im-d.github.io/Im-Infographic-FE/assets/images/img-logo.png">
+          <img class="date-card__user-image" src="https://im-d.github.io/Im-Infographic-FE/assets/images/img-logo.png">
+          <img class="date-card__user-image" src="https://im-d.github.io/Im-Infographic-FE/assets/images/img-logo.png">
+          <img class="date-card__user-image" src="https://im-d.github.io/Im-Infographic-FE/assets/images/img-logo.png">
+          <img class="date-card__user-image" src="https://im-d.github.io/Im-Infographic-FE/assets/images/img-logo.png">
+          <img class="date-card__user-image" src="https://im-d.github.io/Im-Infographic-FE/assets/images/img-logo.png">
+          <img class="date-card__user-image" src="https://im-d.github.io/Im-Infographic-FE/assets/images/img-logo.png">
         </div>
       </section>
     </section>

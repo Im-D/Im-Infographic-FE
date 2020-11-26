@@ -48,7 +48,7 @@ export default ({ size = 16, styles = {}, direction = "right" }) => {
     <button class="imd-arrow-button" style="${styleMap(styles)}">
       <object 
         class="imd-arrow-button__icon ${direction}"
-        data="./assets/icons/straight-right-arrow.svg" 
+        data="https://im-d.github.io/Im-Infographic-FE/assets/icons/straight-right-arrow.svg" 
         type="image/svg+xml">
       </object>
     </button>
