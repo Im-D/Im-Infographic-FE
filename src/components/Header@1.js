@@ -3,7 +3,7 @@ import { html } from 'https://unpkg.com/lit-html?module';
 import HeaderItem from '/src/components/HeaderItem@1.js'
 import Logo from '/src/components/Logo@1.js'
 
-const Header = () => {
+const Header = ({authorCnt, starCnt}) => {
   const itemStyles = {
     marginRight: '12px'
   }
@@ -68,15 +68,15 @@ const Header = () => {
     <header class="header">
       <section class="header__contents">
         <section class="header__left-side">
-          ${HeaderItem({ name: 'id-card', data: '9', styles: itemStyles })}
-          ${HeaderItem({ name: 'star', data: '86' })}
+          ${HeaderItem({ name: 'id-card', data: authorCnt, styles: itemStyles })}
+          ${HeaderItem({ name: 'star', data: starCnt })}
         </section>
         <section class="header__middle-side">
           ${Logo()}
         </section>
         <section class="header__right-side">
-          ${HeaderItem({ name: 'notepad', data: '160', styles: itemStyles })}
-          ${HeaderItem({ name: 'link', data: '400' })}
+          ${HeaderItem({ name: 'notepad', data: '-', styles: itemStyles })}
+          ${HeaderItem({ name: 'link', data: '-' })}
         </section>
       </section>
     </header>

@@ -4,7 +4,14 @@ import { styleMap } from 'https://unpkg.com/lit-html/directives/style-map.js?mod
 import PRLabel from '/src/components/PRLabel@1.js'
 import PullRequestIcon from '/assets/icons/github/pull-request.js'
 
-export default ({ name = 'pull request name', href = '', styles = {}, labelName = 'needs review', labelColor = '#dcf968', date = '2020-11-24', author = 'SeonHyungJo' }) => {
+export default ({ 
+  title = 'pull request name', 
+  url = '', 
+  name = 'SeonHyungJo', 
+  styles = {}, 
+  createdAt = '2020-11-24',
+  labels,
+}) => {
   return html`
     <style>
       .pr-card {
@@ -49,15 +56,15 @@ export default ({ name = 'pull request name', href = '', styles = {}, labelName 
         color: rgb(88, 96, 105);
       }
     </style>
-    <a class="pr-card" href="${href}" style="${styleMap(styles)}">
+    <a class="pr-card" href="${url}" target="_blank" style="${styleMap(styles)}">
       ${PullRequestIcon('pr-card__icon')}
       <section class="pr-card__contents">
         <section class="pr-card__header">
-          <span class="pr-card__title">${name}</span>
-          ${PRLabel({ name: labelName, color: labelColor })}
+          <span class="pr-card__title">${title}</span>
+          ${labels.map(label => PRLabel({ name: label.name, color: label.color }))}
         </section>
         <section class="pr-card__main">
-          <span class="pr-card__main__comment">opened ${date} by ${author}</span>
+          <span class="pr-card__main__comment">opened ${createdAt} by ${name}</span>
         </section>
       </section>
     </a>

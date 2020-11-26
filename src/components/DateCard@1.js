@@ -2,7 +2,7 @@ import { html } from 'https://unpkg.com/lit-html?module';
 
 import PRCard from '/src/components/PRCard@1.js'
 
-export default ({idx = 0, preList = []}) => {
+export default ({title, url, name, createdAt, labels, reviewers}) => {
   return html`
     <style>
       .date-card {
@@ -95,27 +95,21 @@ export default ({idx = 0, preList = []}) => {
     </style>
     <section class="date-card">
       <section class="date-card__header">
-        ${PRCard({})}
+        ${PRCard({title, url, name, createdAt, labels: labels.nodes})}
       </section>
       <section class="date-card__main">
         <div class="date-card__name-card">
           <span class="date-card__name-card__text">미완료 User</span>
         </div>
         <div class="date-card__user-list">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
-          <img class="date-card__user-image" src="./assets/images/img-logo.png">
+          ${reviewers.map((reviewerInfo) => 
+            html`
+              <img 
+                class="date-card__user-image" 
+                src="${reviewerInfo.requestedReviewer.avatarUrl}">
+              </img>
+            `
+          )}
         </div>
       </section>
     </section>

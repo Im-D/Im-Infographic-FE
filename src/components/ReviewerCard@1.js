@@ -3,7 +3,7 @@ import { html } from 'https://unpkg.com/lit-html?module';
 import NameTag from '/src/components/NameTag@1.js'
 import PRCard from '/src/components/PRCard@1.js'
 
-export default ({idx = 1, preList = []}) => {
+export default ({ idx = 1, name, url, avatarUrl = './assets/images/img-logo.png', prList = [] }) => {
   const prStyles = {
     marginBottom: '8px'
   }
@@ -105,19 +105,21 @@ export default ({idx = 1, preList = []}) => {
     <section class="user-card">
       <section class="user-card__header">
         <span class="user-card__number">${idx}</span>
-        <img class="user-card__user-image" src="./assets/images/img-logo.png">
-        ${NameTag({})}
+        <img class="user-card__user-image" src="${avatarUrl}">
+        ${NameTag({ name, href: url })}
       </section>
       <section class="user-card__main">
         <div class="user-card__name-card">
           <span class="user-card__name-card__text">미완료 PR</span>
         </div>
-          ${PRCard({styles: prStyles})}
-          ${PRCard({styles: prStyles})}
-          ${PRCard({styles: prStyles})}
-          ${PRCard({styles: prStyles})}
-          ${PRCard({styles: prStyles})}
-          ${PRCard({})}
+          ${prList.map((prInfo, idx) => 
+            PRCard({ 
+              ...prInfo, 
+              name, 
+              styles: prList.length === idx + 1 ? {} : prStyles, 
+              labels: prInfo.labels.nodes
+            })
+          )}
       </section>
     </section>
   `;
