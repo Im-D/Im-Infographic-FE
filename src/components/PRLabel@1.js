@@ -13,6 +13,6 @@ export default ({name = '', color = '#fff'}) => {
         border-radius: 2em;
       }
     </style>
-    <span class="pr-label" style="background-color: ${color}">${name}</span>
+    <span class="pr-label" style="background-color: #${color}">${name}</span>
   `;
 }

@@ -9,74 +9,38 @@ import Switch from 'https://im-d.github.io/Im-Infographic-FE/src/components/Swit
 import ReviewerCard from 'https://im-d.github.io/Im-Infographic-FE/src/components/ReviewerCard@1.js'
 import DateCard from 'https://im-d.github.io/Im-Infographic-FE/src/components/DateCard@1.js'
 
-const ReviewerCardList = () => {
-  return html`
-    ${ReviewerCard({})}
-    ${ReviewerCard({})}
-    ${ReviewerCard({})}
-    ${ReviewerCard({})}
-    ${ReviewerCard({})}
-    ${ReviewerCard({})}
+const ReviewerCardList = (reviewerCardList) =>
+  html`
+    ${reviewerCardList.map((reviewerCardInfo, idx) => 
+      ReviewerCard({ idx: idx + 1, ...reviewerCardInfo })
+    )}
   `
-}
 
-const DateCardList = () => {
-  return html`
-    ${DateCard({})}
-    ${DateCard({})}
-    ${DateCard({})}
-    ${DateCard({})}
-    ${DateCard({})}
-    ${DateCard({})}
+const DateCardList = (dateCardList) => 
+  html`
+    ${dateCardList.map((dateCardInfo, idx) => 
+      DateCard({ idx: idx + 1, name: dateCardInfo.author.name, reviewers: dateCardInfo.reviewRequests.nodes, ...dateCardInfo })
+    )}
   `
-}
 
-const repoBtnClick = (repoInfo) => {
-  state.currentRepo = { ...repoInfo }
-  const target = document.querySelector(".main__repo-card-container")
-  const result = RepoCard({
-    name: repoInfo.name,
-    url: repoInfo.url,
-    description: repoInfo.description
-  })
-  render(result, target);
-}
+const buttonList = ['User 정렬', 'Date 정렬']
+const switchList = [ReviewerCardList, DateCardList]
 
-const state = {
-  repoList: [
-    {
-      "name": "Dev-Docs",
-      "description": "내가 일주일간 공부하거나 알게된 내용을 공유하는 공간 📱",
-      "updatedAt": "2020-11-22T07:18:38Z",
-      "url": "https://github.com/im-d-team/Dev-Docs"
-    },
-    {
-      "name": "Dev-Contents-House",
-      "description": ":house: Dev-Contents-House",
-      "updatedAt": "2020-11-21T02:33:26Z",
-      "url": "https://github.com/im-d-team/Dev-Contents-House"
-    },
-    {
-      "name": "Algorithm",
-      "description": "🧩Let's study Alogrithm!",
-      "updatedAt": "2020-11-18T07:06:35Z",
-      "url": "https://github.com/im-d-team/Algorithm"
-    }
-  ],
-  buttonList: ['User 정렬', 'Date 정렬'],
-  currentRepo: {
-    "name": "Dev-Docs",
-    "description": "내가 일주일간 공부하거나 알게된 내용을 공유하는 공간 📱",
-    "updatedAt": "2020-11-22T07:18:38Z",
-    "url": "https://github.com/im-d-team/Dev-Docs"
+const Main = ({ repoList, reviewerCardList = [], dateCardList = [] }) => {
+  let currentRepo = repoList[0]
+  const changeCard = (idx) => {
+    render(switchList[idx](idx === 0 ? reviewerCardList : dateCardList), document.querySelector(".main_pr-list"))
   }
-}
 
-const Main = () => {
-  const switchList = [ReviewerCardList, DateCardList]
-  const changeCard = (idx) => { 
-    const target = document.querySelector(".main_pr-list")
-    render(switchList[idx](), target)
+  const repoBtnClick = (repoInfo) => {
+    const result = RepoCard({
+      name: repoInfo.name,
+      url: repoInfo.url,
+      description: repoInfo.description
+    })
+
+    currentRepo = { ...repoInfo }
+    render(result, document.querySelector(".main__repo-card-container"));
   }
 
   return html`
@@ -166,13 +130,13 @@ const Main = () => {
       <section class="main__repo-container">
         <!-- ${ArrowButton({ direction: 'left' })} -->
         <section class="main__repo-list">
-          ${state.repoList.map((repo, idx) => {
+          ${repoList.map((repo, idx) => {
             const styles = {}
-            if (state.repoList.length - 1 !== idx) {
+            if (repoList.length - 1 !== idx) {
               styles['marginRight'] = '10px'
             }
 
-            return Button({ text: repo.name, styles, callback: () => repoBtnClick(repo)})
+            return Button({ text: repo.name, styles, callback: () => repoBtnClick(repo) })
           })}
         </section>
         <!-- ${ArrowButton({})} -->
@@ -180,17 +144,17 @@ const Main = () => {
 
       <section class="main__repo-card-container">
         ${RepoCard({
-          name: state.currentRepo.name,
-          url: state.currentRepo.url,
-          description: state.currentRepo.description
+          name: currentRepo.name,
+          url: currentRepo.url,
+          description: currentRepo.description
         })}
       </section>
 
       <section class="main__pr-container">
-        ${Switch({buttonList: state.buttonList, callback: changeCard})}
+        ${Switch({ buttonList, callback: changeCard })}
 
         <section class="main_pr-list">
-          ${ReviewerCardList()}
+          ${ReviewerCardList(reviewerCardList)}
         </section>
       </section>
     </main>

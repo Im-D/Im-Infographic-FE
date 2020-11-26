@@ -1,6 +1,6 @@
 import { html } from 'https://unpkg.com/lit-html?module';
 
-export default ({name = 'github_name'}) => {
+export default ({name = 'github_name', href = '#'}) => {
   return html`
     <style>
       .name-tag {
@@ -14,8 +14,10 @@ export default ({name = 'github_name'}) => {
         border-radius: 25px;
         background-color: #709fb0;
         box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+
+        cursor: pointer;
       }
     </style>
-    <span class="name-tag"># ${name}</span>
+    <a class="name-tag" href="${href}" target="_blank"># ${name}</a>
   `;
 }
