@@ -21,7 +21,7 @@ const createContents = (date) => {
 
   <script type="module">
     import { render } from 'https://unpkg.com/lit-html?module';
-    import APP from './src/index@1.js';
+    import APP from 'https://im-d.github.io/Im-Infographic-FE/src/index@1.js';
 
     const fetchAuthor = fetch('https://im-d.github.io/Im-Infographic-BE/data/author/${fileName}.json').then(res => res.json())
     const fetchIMDInfo = fetch('https://im-d.github.io/Im-Infographic-BE/data/imd_info/${fileName}.json').then(res => res.json())
