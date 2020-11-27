@@ -6,7 +6,7 @@ const encodeBase64 = (contents) => Buffer.from(contents).toString('base64')
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
 const createContents = (date) => {
-  const fileName = `${date.getFullYear()}${date.getMonth()}${date.getDate()}`
+  const fileName = `${date.getFullYear()}${date.getMonth() + 1}${date.getDate()}`
   return `<!DOCTYPE html>
   <html lang="ko">
 
@@ -94,7 +94,7 @@ now.setHours(now.getHours() + 9)
 
 const commitData = {
   path: `${process.env.DATA_DIR}/${now.getFullYear()}`,
-  fileName: `${now.getMonth()}${now.getDate()}`,
+  fileName: `${now.getMonth() + 1}${now.getDate()}`,
   contents: createContents(now)
 }
 
