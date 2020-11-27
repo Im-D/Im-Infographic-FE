@@ -1,0 +1,28 @@
+{
+  "name": "Im-Infographic-FE",
+  "version": "1.0.0",
+  "description": "Static Site for Im-D",
+  "main": "createSite.js",
+  "scripts": {
+    "dev": "node ./createSite.js",
+    "test": "NODE_ENV=develop npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Im-D/Im-Infographic-FE.git"
+  },
+  "keywords": [
+    "IMD"
+  ],
+  "author": "IMD",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Im-D/Im-Infographic-FE/issues"
+  },
+  "homepage": "https://github.com/Im-D/Im-Infographic-FE#readme",
+  "dependencies": {
+    "@octokit/rest": "^18.0.9",
+    "axios": "^0.21.0",
+    "dotenv": "^8.2.0"
+  }
+}
