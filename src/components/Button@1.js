@@ -19,6 +19,7 @@ export default ({ text = 'button name', styles = {}, callback = () => {} }) => {
 
         font-size: 16px;
         color: #fff;
+        white-space: nowrap;
 
         cursor: pointer;
       }

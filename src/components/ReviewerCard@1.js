@@ -74,7 +74,7 @@ export default ({ idx = 1, name, url, avatarUrl = './assets/images/img-logo.png'
 
         width: 100%;
 
-        padding: 12px 12px 4px;
+        padding: 12px 0px 0px;
         box-sizing: border-box;
       }
 

@@ -14,7 +14,7 @@ export default ({ name = 'Dev-Docs', url = '', description = 'Repository Content
         align-items: flex-start;
 
         max-width: 100%;
-        min-width: 360px;
+        min-width: 320px;
         padding: 16px;
 
         box-sizing: border-box;

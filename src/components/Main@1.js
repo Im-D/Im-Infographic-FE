@@ -11,16 +11,16 @@ import DateCard from 'https://im-d.github.io/Im-Infographic-FE/src/components/Da
 
 const ReviewerCardList = (reviewerCardList) =>
   html`
-    ${reviewerCardList.map((reviewerCardInfo, idx) => 
-      ReviewerCard({ idx: idx + 1, ...reviewerCardInfo })
-    )}
+    ${reviewerCardList.map((reviewerCardInfo, idx) =>
+    ReviewerCard({ idx: idx + 1, ...reviewerCardInfo })
+  )}
   `
 
-const DateCardList = (dateCardList) => 
+const DateCardList = (dateCardList) =>
   html`
-    ${dateCardList.map((dateCardInfo, idx) => 
-      DateCard({ idx: idx + 1, name: dateCardInfo.author.name, reviewers: dateCardInfo.reviewRequests.nodes, ...dateCardInfo })
-    )}
+    ${dateCardList.map((dateCardInfo, idx) =>
+    DateCard({ idx: idx + 1, name: dateCardInfo.author.name, reviewers: dateCardInfo.reviewRequests.nodes, ...dateCardInfo })
+  )}
   `
 
 const buttonList = ['User 정렬', 'Date 정렬']
@@ -55,7 +55,7 @@ const Main = ({ repoList, reviewerCardList = [], dateCardList = [] }) => {
         max-width: 600px;
         height: 100%;
 
-        margin: 0 auto 50px;
+        margin: 0 auto 32px;
       }
 
       .main__repo-container {
@@ -77,16 +77,20 @@ const Main = ({ repoList, reviewerCardList = [], dateCardList = [] }) => {
         align-items: center;
         width: 100%;
 
-        margin-top: 32px;
+        margin-top: 32px;        
       }
 
       .main__repo-list {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
+        min-width: 320px;
 
-        margin: 0 12px;
+        overflow: auto;
+
+        padding: 0 12px;
+        box-sizing: border-box;
       }
 
       .main__pr-container{
@@ -101,9 +105,9 @@ const Main = ({ repoList, reviewerCardList = [], dateCardList = [] }) => {
 
       .main_pr-list{
         width: 100%;
-        height: 600px;
+        height: 472px;
 
-        margin-top: 30px;
+        margin-top: 12px;
         padding: 12px;
 
         overflow: auto;
@@ -113,11 +117,11 @@ const Main = ({ repoList, reviewerCardList = [], dateCardList = [] }) => {
         box-sizing: border-box;
         /* box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2); */
 
-        background: 
+        /* background: 
           linear-gradient(#fff 33%, rgba(249,206,192, 0)),
           linear-gradient(rgba(249,206,192, 0), #fff 66%) 0 100%,
           radial-gradient(farthest-side at 50% 0, rgba(34,34,34, 0.5), rgba(0,0,0,0)),
-          radial-gradient(farthest-side at 50% 100%, rgba(34,34,34, 0.5), rgba(0,0,0,0)) 0 100%;
+          radial-gradient(farthest-side at 50% 100%, rgba(34,34,34, 0.5), rgba(0,0,0,0)) 0 100%; */
         background-color: #fff;
         background-repeat: no-repeat;
         background-attachment: local, local, scroll, scroll;
