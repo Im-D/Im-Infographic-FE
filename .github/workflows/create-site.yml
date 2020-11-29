@@ -1,8 +1,12 @@
 name: Create Site
 
-on:
-  schedule:
-    - cron: '58 14 * * *'
+# on:
+#   schedule:
+#     - cron: '58 14 * * *'
+on: 
+  push:
+    branches:
+      - main
 
 jobs:
   cron:
@@ -38,5 +42,4 @@ jobs:
           USER_NAME: ${{ secrets.USER_NAME }} 
           USER_EMAIL: ${{ secrets.USER_EMAIL }}
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-          GITHUB_URL: ${{ secrets.GITHUB_URL }}
           DATA_DIR: ${{ secrets.DATA_DIR }}
