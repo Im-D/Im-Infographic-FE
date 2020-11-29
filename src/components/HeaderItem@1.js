@@ -1,8 +1,18 @@
 import { html } from 'https://unpkg.com/lit-html?module';
 import { styleMap } from 'https://unpkg.com/lit-html/directives/style-map.js?module';
 
+const headerLink = {
+  'id-card':'https://github.com/im-d-team/Dev-Docs/graphs/contributors',
+  'star':'https://github.com/im-d-team/Dev-Docs/stargazers',
+  'notepad':'https://github.com/im-d-team/Dev-Docs',
+  'link':'https://github.com/im-d-team/Dev-Contents-House'
+}
+
+const Convertor = (linkList) => (name) => linkList[name] ? linkList[name] :  '#'
+const headerLinkConvertor = Convertor(headerLink)
+
 export default ({ name, size = 24, styles = {}, data = '' }) => html`
-  <section class="header-item" style="${styleMap(styles)}">
+  <a class="header-item" style="${styleMap(styles)}" href="${headerLinkConvertor(name)}" target="_blank">
     <style>
       .header-item{
         display: flex;
@@ -30,5 +40,5 @@ export default ({ name, size = 24, styles = {}, data = '' }) => html`
       type="image/svg+xml">
     </object>
     <span class="header-item__text">${data}</span>
-  </section>
+  </a>
 `;
