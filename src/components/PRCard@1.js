@@ -4,6 +4,11 @@ import { styleMap } from 'https://unpkg.com/lit-html/directives/style-map.js?mod
 import PRLabel from 'https://im-d.github.io/Im-Infographic-FE/src/components/PRLabel@1.js'
 import PullRequestIcon from 'https://im-d.github.io/Im-Infographic-FE/assets/icons/github/pull-request.js'
 
+const dateConvertor = (dateStr) => {
+  const date = new Date(dateStr)
+  return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
+}
+
 export default ({ 
   title = 'pull request name', 
   url = '', 
@@ -64,7 +69,7 @@ export default ({
           ${labels.map(label => PRLabel({ name: label.name, color: label.color }))}
         </section>
         <section class="pr-card__main">
-          <span class="pr-card__main__comment">opened ${createdAt} by ${name}</span>
+          <span class="pr-card__main__comment">opened ${dateConvertor(createdAt)} by ${name}</span>
         </section>
       </section>
     </a>
