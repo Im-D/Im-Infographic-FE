@@ -5,7 +5,8 @@
   "main": "createSite.js",
   "scripts": {
     "dev": "node ./createSite.js",
-    "test": "NODE_ENV=develop npm run dev"
+    "test": "NODE_ENV=develop npm run dev",
+    "test:noti": "node slackNoti.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   "homepage": "https://github.com/Im-D/Im-Infographic-FE#readme",
   "dependencies": {
     "@octokit/rest": "^18.0.9",
+    "@slack/webhook": "^5.0.3",
     "axios": "^0.21.0",
     "dotenv": "^8.2.0"
   }

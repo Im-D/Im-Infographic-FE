@@ -1,6 +1,7 @@
 require('dotenv').config();
 const fs = require('fs')
 const { Octokit } = require("@octokit/rest");
+const { sendSlack } = require('./slackNoti');
 
 const encodeBase64 = (contents) => Buffer.from(contents).toString('base64')
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
@@ -82,6 +83,9 @@ const creatCommit = async ({ path, fileName, contents }) => {
           email: process.env.USER_EMAIL
         }
       })
+      
+      await sendSlack(now, `${path}/${fileName}`)
+      
       console.log(`Success ${path}/${fileName}.html`)
     } catch (e) {
       console.log(`Error ${e} / ${path}/${fileName}.html`)
