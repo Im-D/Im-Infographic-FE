@@ -4,16 +4,17 @@ import { styleMap } from 'https://unpkg.com/lit-html/directives/style-map.js?mod
 import PRLabel from 'https://im-d.github.io/Im-Infographic-FE/src/components/PRLabel@1.js'
 import PullRequestIcon from 'https://im-d.github.io/Im-Infographic-FE/assets/icons/github/pull-request.js'
 
+const zeroPrefix = (num) => (('0' + num).slice(-2))
 const dateConvertor = (dateStr) => {
   const date = new Date(dateStr)
-  return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
+  return `${date.getFullYear()}-${zeroPrefix(date.getMonth() + 1)}-${zeroPrefix(date.getDate())}`
 }
 
-export default ({ 
-  title = 'pull request name', 
-  url = '', 
-  name = 'SeonHyungJo', 
-  styles = {}, 
+export default ({
+  title = 'pull request name',
+  url = '',
+  name = 'SeonHyungJo',
+  styles = {},
   createdAt = '2020-11-24',
   labels,
 }) => {

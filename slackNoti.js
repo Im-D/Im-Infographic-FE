@@ -1,5 +1,7 @@
 const { IncomingWebhook } = require('@slack/webhook');
 require('dotenv').config();
+
+const zeroPrefix = (num) => (('0' + num).slice(-2))
 const url = process.env.SLACK_WEBHOOK_URL;
 
 const webhook = new IncomingWebhook(url);
@@ -16,7 +18,7 @@ const titleList = [
 // Send the notification
 exports.sendSlack = async (date, path) => {
   try {
-    const now = `${date.getFullYear()}년 ${date.getMonth() + 1}월 ${date.getDate()}일`
+    const now = `${date.getFullYear()}년 ${zeroPrefix(date.getMonth() + 1)}월 ${zeroPrefix(date.getDate())}일`
     await webhook.send({
       "blocks": [
         {

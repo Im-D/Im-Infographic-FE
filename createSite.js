@@ -5,9 +5,10 @@ const { sendSlack } = require('./slackNoti');
 
 const encodeBase64 = (contents) => Buffer.from(contents).toString('base64')
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
+const zeroPrefix = (num) => (('0' + num).slice(-2))
 
 const createContents = (date) => {
-  const fileName = `${date.getFullYear()}${date.getMonth() + 1}${date.getDate()}`
+  const fileName = `${date.getFullYear()}${zeroPrefix(date.getMonth() + 1)}${zeroPrefix(date.getDate())}`
   return `<!DOCTYPE html>
   <html lang="ko">
 
@@ -83,9 +84,9 @@ const creatCommit = async ({ path, fileName, contents }) => {
           email: process.env.USER_EMAIL
         }
       })
-      
+
       await sendSlack(now, `${path}/${fileName}`)
-      
+
       console.log(`Success ${path}/${fileName}.html`)
     } catch (e) {
       console.log(`Error ${e} / ${path}/${fileName}.html`)
