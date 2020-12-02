@@ -99,7 +99,7 @@ now.setHours(now.getHours() + 9)
 
 const commitData = {
   path: `${process.env.DATA_DIR}/${now.getFullYear()}`,
-  fileName: `${now.getMonth() + 1}${now.getDate()}`,
+  fileName: `${zeroPrefix(now.getMonth() + 1)}${zeroPrefix(now.getDate())}`,
   contents: createContents(now)
 }
 

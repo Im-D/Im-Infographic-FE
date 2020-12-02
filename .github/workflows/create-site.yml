@@ -1,8 +1,13 @@
 name: Create Site
 
+# on:
+#   schedule:
+#     - cron: '55 2 * * *'
+
 on:
-  schedule:
-    - cron: '55 2 * * *'
+  push:
+    branches:
+      - main
 
 jobs:
   cron:
