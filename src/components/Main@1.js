@@ -36,7 +36,9 @@ const Main = ({ repoList, reviewerCardList = [], dateCardList = [] }) => {
     const result = RepoCard({
       name: repoInfo.name,
       url: repoInfo.url,
-      description: repoInfo.description
+      description: repoInfo.description,
+      stars: repoInfo.stargazerCount,
+      forks: repoInfo.forkCount,
     })
 
     currentRepo = { ...repoInfo }
@@ -152,7 +154,7 @@ const Main = ({ repoList, reviewerCardList = [], dateCardList = [] }) => {
           url: currentRepo.url,
           description: currentRepo.description,
           stars: currentRepo.stargazerCount,
-          fork: currentRepo.forkCount,
+          forks: currentRepo.forkCount,
         })}
       </section>
 
