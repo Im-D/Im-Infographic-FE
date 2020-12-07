@@ -150,7 +150,9 @@ const Main = ({ repoList, reviewerCardList = [], dateCardList = [] }) => {
         ${RepoCard({
           name: currentRepo.name,
           url: currentRepo.url,
-          description: currentRepo.description
+          description: currentRepo.description,
+          stars: currentRepo.stargazerCount,
+          fork: currentRepo.forkCount,
         })}
       </section>
 
