@@ -61,10 +61,40 @@ const writeFile = ({ path = '', fileName = '', contents = '' }) => {
   const filePath = `${path}/${fileName}.html`
   checkDirExist(process.env.DATA_DIR)
   checkDirExist(path)
-  if (fs.existsSync(filePath)) {
-    fs.unlinkSync(filePath)
-  }
+  
   return fs.writeFileSync(filePath, contents)
+}
+
+const checkIsExistFile = async ({ path, fileName }) => {
+  try {
+    const content = await octokit.repos.getContent({
+      owner: process.env.OWNER,
+      repo: process.env.REPO_NAME,
+      path: `${path}/${fileName}.html`,
+    })
+
+    return content.data.sha
+  } catch (e) {
+    console.log(`Error checkIsExistFile ${e} / ${path}/${fileName}.html`)
+    return null
+  }
+}
+
+const deleteExistFile = async ({ path, sha, fileName }) => {
+  try {
+    await octokit.repos.deleteFile({
+      owner: process.env.OWNER,
+      repo: process.env.REPO_NAME,
+      path: `${path}/${fileName}.html`,
+      message: `fix: Delete ${fileName}.html`,
+      sha,
+    });
+
+    return true
+  } catch (e) {
+    console.log(`Error deleteExistFile ${e} / ${path}/${fileName}.html`)
+    return false
+  }
 }
 
 const creatCommit = async ({ path, fileName, contents }) => {
@@ -72,6 +102,9 @@ const creatCommit = async ({ path, fileName, contents }) => {
     writeFile({ path, fileName, contents })
   } else {
     try {
+      const sha = await checkIsExistFile({ path, fileName })
+      await deleteExistFile({ path, sha, fileName })
+
       await octokit.repos.createOrUpdateFileContents({
         owner: process.env.OWNER,
         repo: process.env.REPO_NAME,
