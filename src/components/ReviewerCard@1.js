@@ -111,7 +111,6 @@ export default ({ idx = 1, name, url, avatarUrl = './assets/images/img-logo.png'
         <div class="user-card__name-card">
           <span class="user-card__name-card__text">미완료 PR</span>
         </div>
-        ${console.log(prList)}
           ${prList.map((prInfo, idx) => 
             PRCard({ 
               ...prInfo, 
