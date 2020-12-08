@@ -58,10 +58,13 @@ const checkDirExist = (dirPath) => {
 }
 
 const writeFile = ({ path = '', fileName = '', contents = '' }) => {
+  const filePath = `${path}/${fileName}.html`
   checkDirExist(process.env.DATA_DIR)
   checkDirExist(path)
-
-  return fs.writeFileSync(`${path}/${fileName}.html`, contents)
+  if (fs.existsSync(filePath)) {
+    fs.unlinkSync(filePath)
+  }
+  return fs.writeFileSync(filePath, contents)
 }
 
 const creatCommit = async ({ path, fileName, contents }) => {
