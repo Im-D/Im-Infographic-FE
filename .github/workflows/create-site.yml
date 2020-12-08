@@ -2,7 +2,7 @@ name: Create Site
 
 on:
   schedule:
-    - cron: '50 2 * * *'
+    - cron: '*/10 * * * *'
 
 jobs:
   cron:
