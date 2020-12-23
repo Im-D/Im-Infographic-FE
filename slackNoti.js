@@ -63,7 +63,7 @@ exports.sendSlack = async (date, path) => {
                 "emoji": true
               },
               "value": "오늘의 사이트",
-              "url": `https://process.im-d.dev/${path}.html`
+              "url": `https://im-d.github.io/${path}.html`
             },
             {
               "type": "button",

@@ -1,13 +1,13 @@
 import { html, render } from 'https://unpkg.com/lit-html?module';
 
-import IMDInfoCard from 'https://process.im-d.dev/Im-Infographic-FE/src/components/IMDInfoCard@1.js'
-import Button from 'https://process.im-d.dev/Im-Infographic-FE/src/components/Button@1.js'
-import ArrowButton from 'https://process.im-d.dev/Im-Infographic-FE/src/components/ArrowButton@1.js'
-import RepoCard from 'https://process.im-d.dev/Im-Infographic-FE/src/components/RepoCard@1.js'
-import Switch from 'https://process.im-d.dev/Im-Infographic-FE/src/components/Switch@1.js'
+import IMDInfoCard from 'https://im-d.github.io/Im-Infographic-FE/src/components/IMDInfoCard@1.js'
+import Button from 'https://im-d.github.io/Im-Infographic-FE/src/components/Button@1.js'
+import ArrowButton from 'https://im-d.github.io/Im-Infographic-FE/src/components/ArrowButton@1.js'
+import RepoCard from 'https://im-d.github.io/Im-Infographic-FE/src/components/RepoCard@1.js'
+import Switch from 'https://im-d.github.io/Im-Infographic-FE/src/components/Switch@1.js'
 
-import ReviewerCard from 'https://process.im-d.dev/Im-Infographic-FE/src/components/ReviewerCard@1.js'
-import DateCard from 'https://process.im-d.dev/Im-Infographic-FE/src/components/DateCard@1.js'
+import ReviewerCard from 'https://im-d.github.io/Im-Infographic-FE/src/components/ReviewerCard@1.js'
+import DateCard from 'https://im-d.github.io/Im-Infographic-FE/src/components/DateCard@1.js'
 
 const ReviewerCardList = (reviewerCardList) =>
   html`

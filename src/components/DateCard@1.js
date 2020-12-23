@@ -1,6 +1,6 @@
 import { html } from 'https://unpkg.com/lit-html?module';
 
-import PRCard from 'https://process.im-d.dev/Im-Infographic-FE/src/components/PRCard@1.js'
+import PRCard from 'https://im-d.github.io/Im-Infographic-FE/src/components/PRCard@1.js'
 
 export default ({title, url, name, createdAt, labels, reviewers}) => {
   return html`
