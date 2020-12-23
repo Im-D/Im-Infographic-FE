@@ -1,8 +1,8 @@
 import { html } from 'https://unpkg.com/lit-html?module';
 import { styleMap } from 'https://unpkg.com/lit-html/directives/style-map.js?module';
 
-import PRLabel from 'https://im-d.github.io/Im-Infographic-FE/src/components/PRLabel@1.js'
-import PullRequestIcon from 'https://im-d.github.io/Im-Infographic-FE/assets/icons/github/pull-request.js'
+import PRLabel from 'https://process.im-d.dev/Im-Infographic-FE/src/components/PRLabel@1.js'
+import PullRequestIcon from 'https://process.im-d.dev/Im-Infographic-FE/assets/icons/github/pull-request.js'
 
 const zeroPrefix = (num) => (('0' + num).slice(-2))
 const dateConvertor = (dateStr) => {

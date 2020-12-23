@@ -1,7 +1,7 @@
 import { html } from 'https://unpkg.com/lit-html?module';
 
-import Header from 'https://im-d.github.io/Im-Infographic-FE/src/components/Header@1.js'
-import Main from 'https://im-d.github.io/Im-Infographic-FE/src/components/Main@1.js'
+import Header from 'https://process.im-d.dev/Im-Infographic-FE/src/components/Header@1.js'
+import Main from 'https://process.im-d.dev/Im-Infographic-FE/src/components/Main@1.js'
 
 const createReviewerCardList = (prList) => {
   return Object.values(prList.reduce((acc, prInfo) => {

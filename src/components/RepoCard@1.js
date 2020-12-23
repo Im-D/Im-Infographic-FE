@@ -1,8 +1,8 @@
 import { html } from 'https://unpkg.com/lit-html?module';
 
-import ForksIcon from 'https://im-d.github.io/Im-Infographic-FE/assets/icons/github/forks.js'
-import StartsIcon from 'https://im-d.github.io/Im-Infographic-FE/assets/icons/github/stars.js'
-import RepoIcon from 'https://im-d.github.io/Im-Infographic-FE/assets/icons/github/repo.js'
+import ForksIcon from 'https://process.im-d.dev/Im-Infographic-FE/assets/icons/github/forks.js'
+import StartsIcon from 'https://process.im-d.dev/Im-Infographic-FE/assets/icons/github/stars.js'
+import RepoIcon from 'https://process.im-d.dev/Im-Infographic-FE/assets/icons/github/repo.js'
 
 export default ({ name = 'Dev-Docs', url = '', description = 'Repository Contents', stars = 0, forks = 0 }) => {
   return html`

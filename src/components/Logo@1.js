@@ -11,6 +11,6 @@ export default () => {
         object-fit: cover;
       }
     </style>
-    <img class="logo" src="https://im-d.github.io/Im-Infographic-FE/assets/images/img-logo.png">
+    <img class="logo" src="https://process.im-d.dev/Im-Infographic-FE/assets/images/img-logo.png">
   `;
 }

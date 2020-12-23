@@ -1,7 +1,7 @@
 import { html } from 'https://unpkg.com/lit-html?module';
 
-import NameTag from 'https://im-d.github.io/Im-Infographic-FE/src/components/NameTag@1.js'
-import PRCard from 'https://im-d.github.io/Im-Infographic-FE/src/components/PRCard@1.js'
+import NameTag from 'https://process.im-d.dev/Im-Infographic-FE/src/components/NameTag@1.js'
+import PRCard from 'https://process.im-d.dev/Im-Infographic-FE/src/components/PRCard@1.js'
 
 export default ({ idx = 1, name, url, avatarUrl = './assets/images/img-logo.png', prList = [] }) => {
   const prStyles = {
