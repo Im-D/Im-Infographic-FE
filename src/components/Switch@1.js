@@ -1,9 +1,9 @@
 import { html } from 'https://unpkg.com/lit-html?module';
 
-export default ({buttonList = [], callback = () => {}}) => {
+export default ({ type = 'repo', buttonList = [], callback = () => {} }) => {
   const selectMenu = (idx = 0) => {
-    const selecteArea = document.querySelector(".switch__selected-area")
-    selecteArea.style.cssText = `transform: translateX(${100 * idx - 50}%) translateY(-10%);`
+    const selectedArea = document.querySelector(`.switch__selected-area-${type}`)
+    selectedArea.style.cssText = `transform: translateX(${100 * idx - 50}%) translateY(-10%);`
     callback(idx)
   }
 
@@ -37,7 +37,8 @@ export default ({buttonList = [], callback = () => {}}) => {
         margin-right: 0px;
       }
 
-      .switch__selected-area{
+      .switch__selected-area-repo,
+      .switch__selected-area-align {
         position: absolute;
         transform: translateX(-50%) translateY(-10%);
         transition: transform 0.5s;
@@ -57,7 +58,7 @@ export default ({buttonList = [], callback = () => {}}) => {
           ${item}
         </span>`
       })}
-      <div class="switch__selected-area"></div>
+      <div class="switch__selected-area-${type}"></div>
     </section>
   `;
 }

@@ -16,7 +16,7 @@ const createReviewerCardList = (prList) => {
   }, {}))
 }
 
-export default ({ author, imd_info, imd_repos, pr }) => {
+export default ({ author, imd_info, imd_repos, pr, pr_next_step }) => {
   const headerState = {
     authorCnt: Object.keys(author).length,
     starCnt: imd_repos.repos.reduce((acc, { stargazerCount }) => acc + stargazerCount, 0)
@@ -25,7 +25,9 @@ export default ({ author, imd_info, imd_repos, pr }) => {
   const mainState = {
     repoList: imd_repos.repos,
     reviewerCardList: createReviewerCardList(pr.prList),
-    dateCardList: pr.prList
+    reviewerCardListNextStep : createReviewerCardList(pr_next_step.prList),
+    dateCardList: pr.prList,
+    dateCardListNextStep: pr_next_step.prList,
   }
 
   return html`

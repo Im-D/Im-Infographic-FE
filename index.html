@@ -14,20 +14,22 @@
   import { render } from 'https://unpkg.com/lit-html?module';
   import APP from './src/index@1.js';
 
-  const now = '20201028'
+  const now = '20210115'
 
   const fetchAuthor = fetch(`https://im-d.github.io/Im-Infographic-BE/data/author/${now}.json`).then(res => res.json())
   const fetchIMDInfo = fetch(`https://im-d.github.io/Im-Infographic-BE/data/imd_info/${now}.json`).then(res => res.json())
   const fetchIMDRepos = fetch(`https://im-d.github.io/Im-Infographic-BE/data/imd_repos/${now}.json`).then(res => res.json())
   const fetchPR = fetch(`https://im-d.github.io/Im-Infographic-BE/data/pr/${now}.json`).then(res => res.json())
+  const fetchNextStepPR = fetch(`https://im-d.github.io/Im-Infographic-BE/data/pr_next_step/${now}.json`).then(res => res.json())
 
-  Promise.all([fetchAuthor, fetchIMDInfo, fetchIMDRepos, fetchPR])
-    .then(([author, imd_info, imd_repos, pr]) => {
+  Promise.all([fetchAuthor, fetchIMDInfo, fetchIMDRepos, fetchPR, fetchNextStepPR])
+    .then(([author, imd_info, imd_repos, pr, pr_next_step]) => {
       const state = {
         author, 
         imd_info,
         imd_repos,
-        pr
+        pr,
+        pr_next_step,
       }
       render(APP(state), document.body);
     })

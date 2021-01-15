@@ -23,13 +23,35 @@ const DateCardList = (dateCardList) =>
   )}
   `
 
+const repoButtonList = ['Dev-Docs', 'Next-Step']
 const buttonList = ['User 정렬', 'Date 정렬']
 const switchList = [ReviewerCardList, DateCardList]
 
-const Main = ({ repoList, reviewerCardList = [], dateCardList = [] }) => {
-  let currentRepo = repoList[0]
-  const changeCard = (idx) => {
-    render(switchList[idx](idx === 0 ? reviewerCardList : dateCardList), document.querySelector(".main_pr-list"))
+const Main = ({ repoList, reviewerCardList = [], reviewerCardListNextStep = [], dateCardList = [], dateCardListNextStep = [] }) => {
+  let currentRepo = repoList[0];
+  let switchState = {
+    repoIndex: 0,
+    alignIndex: 0,
+  }
+  const getCurrentCardList = ({ repoIndex = 0, alignIndex = 0 }) => {
+    const currentCardObj = {
+      '0,0': reviewerCardList,
+      '0,1': dateCardList,
+      '1,0': reviewerCardListNextStep,
+      '1,1': dateCardListNextStep,
+    }
+
+    return currentCardObj[`${repoIndex},${alignIndex}`];
+  }
+
+  const changeCard = ({ repoIndex = 0, alignIndex = 0 }) => {
+    switchState = {
+      repoIndex,
+      alignIndex,
+    };
+    const currentCardList = getCurrentCardList({ repoIndex, alignIndex })
+    console.log(currentCardList);
+    render(switchList[alignIndex](currentCardList), document.querySelector(".main_pr-list"))
   }
 
   const repoBtnClick = (repoInfo) => {
@@ -104,6 +126,13 @@ const Main = ({ repoList, reviewerCardList = [], dateCardList = [] }) => {
         width: 100%;
         margin-top: 60px;
       }
+      
+      .main_pr-switch{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 90%;
+      }
 
       .main_pr-list{
         width: 100%;
@@ -159,8 +188,10 @@ const Main = ({ repoList, reviewerCardList = [], dateCardList = [] }) => {
       </section>
 
       <section class="main__pr-container">
-        ${Switch({ buttonList, callback: changeCard })}
-
+        <section class="main_pr-switch">
+          ${Switch({ type: 'repo', buttonList: repoButtonList, callback: idx => changeCard({ ...switchState, repoIndex: idx }) })}
+          ${Switch({ type: 'align', buttonList, callback: idx => changeCard({ ...switchState, alignIndex: idx }) })}
+        </section>
         <section class="main_pr-list">
           ${ReviewerCardList(reviewerCardList)}
         </section>
