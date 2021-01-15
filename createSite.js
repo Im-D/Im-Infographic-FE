@@ -29,7 +29,7 @@ const createContents = (date) => {
     const fetchIMDInfo = fetch('https://im-d.github.io/Im-Infographic-BE/data/imd_info/${fileName}.json').then(res => res.json())
     const fetchIMDRepos = fetch('https://im-d.github.io/Im-Infographic-BE/data/imd_repos/${fileName}.json').then(res => res.json())
     const fetchPR = fetch('https://im-d.github.io/Im-Infographic-BE/data/pr/${fileName}.json').then(res => res.json())
-    const fetchNextStepPR = fetch('https://im-d.github.io/Im-Infographic-BE/data/pr_next_step/${now}.json').then(res => res.json())
+    const fetchNextStepPR = fetch('https://im-d.github.io/Im-Infographic-BE/data/pr_next_step/${fileName}.json').then(res => res.json())
 
     Promise.all([fetchAuthor, fetchIMDInfo, fetchIMDRepos, fetchPR, fetchNextStepPR])
       .then(([author, imd_info, imd_repos, pr, pr_next_step]) => {
