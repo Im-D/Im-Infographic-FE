@@ -17,7 +17,7 @@ export default ({ type = 'repo', buttonList = [], callback = () => {} }) => {
         position: relative;
 
         padding: 12px 20px;
-
+        margin: 5px;
         border: none;
         border-radius: 25px;
         box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
