@@ -131,6 +131,7 @@ const Main = ({ repoList, reviewerCardList = [], reviewerCardListNextStep = [], 
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        overflow: auto;
         width: 90%;
       }
 
